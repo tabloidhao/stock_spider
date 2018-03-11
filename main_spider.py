@@ -44,5 +44,5 @@ def go():
         print('第{}支股票完成'.format(num+1))
     print('全部完成')
 
-if __name__ =='__main__':
-    go()
+# if __name__ =='__main__':
+#     go()
