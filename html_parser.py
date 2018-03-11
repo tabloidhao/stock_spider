@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import re
 
 class html_parser(object):
     def parser(self, text):

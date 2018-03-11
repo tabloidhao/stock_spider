@@ -23,7 +23,7 @@ def go():
     # 爬虫主循环
     for num, code in enumerate(code_url_list):
         if code + '.csv' in os.listdir('csv'):
-            print('股票代码为{}数据已经存在'.format(code))
+            print('第{}个股票数据已经存在'.format(num+1))
             continue
         stock_info = [['日期', '开盘价', '最高价', '最低价', '收盘价', '涨跌额',
                         '涨跌幅(%)', '成交量(手)', '成交金额(万元)', '振幅(%)', '换手率(%)']]
@@ -34,14 +34,12 @@ def go():
                 # 抓取需要的信息,并将其加入到列表
                 try:
                     stock_info = stock_info + parser.parser(text)
-                    # print('第{}支股票完成'.format(num + 1))
                 except Exception as err:
                     print(err)
-                    print('第{}支股票数据导入失败'.format(num + 1))
                 # print(stock_info)
         # 将数据写入CSV
         # print(stock_info)
-        # time.sleep(random.uniform(1, 2))
+        time.sleep(random.uniform(1, 2))
         output.csv(code, stock_info)
         print('第{}支股票完成'.format(num+1))
     print('全部完成')
