@@ -9,10 +9,7 @@ class get_all_url(object):
             'User-Agent': r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)'
                           r'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
         }
-        try:
-            r = requests.get(url, headers=header, timeout=2)
-        except Exception as err:
-            print(err)
+        r = requests.get(url, headers=header, timeout=2)
         soup = BeautifulSoup(r.text, 'html.parser')
         primary_stock_code = soup.find('div',{'class':'quotebody'}).select('li')
         # print(primary_stock_code)

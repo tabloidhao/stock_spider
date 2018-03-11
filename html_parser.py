@@ -10,7 +10,6 @@ class html_parser(object):
         # 找到大标签下的小标签
         stock = soup.find('table',{'class':'table_bg001 border_box limit_sale'})
         stock = stock.find_all('tr')
-
         stock_info = []
         # 将股票数据添加到文本
         for num in stock:
