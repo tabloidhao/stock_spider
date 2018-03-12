@@ -8,7 +8,7 @@ warnings.filterwarnings("ignore")
 codelist = os.listdir('newcsv/')
 connect = pymysql.connect(host="localhost",
                           user="root",
-                          password="199571",
+                          password="******",# 使用时改回来
                           db="stock_info",
                           port=3306)
 cur = connect.cursor()
